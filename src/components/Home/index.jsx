@@ -7,6 +7,19 @@ import AnimatedLetters from '../AnimatedLetters'
 // import DisplacementSphere from '../background/DisplacementSphere'
 import { Framer } from '../Geometry/Framer'
 import './index.scss'
+import { SocialIcons } from '../Contact/SocialIcons'
+import { Hidden } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+}));
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -21,9 +34,13 @@ const Home = () => {
     }, 4000)
     return () => clearTimeout(timer)
   }, [])
-
+  const classes = useStyles();
   return (
     <>
+      <div className={classes.root} id="home">
+              <Hidden smDown>
+          <SocialIcons />
+        </Hidden>
       <div className="container home-page">
         <div className="text-zone">
           <h1>
@@ -54,16 +71,20 @@ const Home = () => {
           </h1>
           <h2>
             Etudiant en Cybersécurité
+            
           </h2>
+   
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
                {/* <Framer/> */}
+          
         </div>
      
       </div>
 
       <Loader type="pacman" />
+      </div>
     </>
   )
 }
