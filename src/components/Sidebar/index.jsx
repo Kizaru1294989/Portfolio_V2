@@ -9,6 +9,7 @@ import {
   faUser,
   faEnvelope,
   faScrewdriverWrench,
+  faProjectDiagram
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -16,10 +17,10 @@ const Sidebar = () => {
   return (
     <>
       <div className="nav-bar">
-        <Link className="logo" to="/">
+        {/* <Link className="logo" to="/">
           <img src={LogoS} alt="Logo" />
           <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
-        </Link>
+        </Link> */}
         <nav>
           <NavLink exact="true" activeclassname="active" to="/">
             <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
@@ -42,6 +43,13 @@ const Sidebar = () => {
             to="/contact"
           >
             <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          </NavLink>
+          <NavLink
+            activeclassname="active"
+            className="projets-link"
+            to="/projets"
+          >
+            <FontAwesomeIcon icon={faProjectDiagram} color="#4d4d4e" />
           </NavLink>
         </nav>
         <ul>

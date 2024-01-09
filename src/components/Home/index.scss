@@ -6,7 +6,6 @@
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
-
     h1 {
       color: #fff;
       font-size: 56px;
@@ -14,6 +13,9 @@
       margin: 0;
       font-family: 'Coolvetica';
       font-weight: 400;
+      .letterName {
+        color:red;
+      }
 
       &:before {
         // content: '<h1>';
@@ -27,7 +29,7 @@
       }
 
       &:after {
-        content: '<h1/>';
+        // content: '<h1/>';
         font-family: 'La Belle Aurore', cursive;
         color: #00ff7f;
         font-size: 18px;

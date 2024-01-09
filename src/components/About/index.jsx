@@ -5,17 +5,18 @@ import {
   faCss3,
   faGitAlt,
   faHtml5,
-  faJsSquare,
+  faLinux,
   faReact,
   faPython,
 } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Ciscoimg from '../../assets/images/cisco.svg'
 import './index.scss'
 
 const About = () => {
-  const aboutArray = 'About Me'.split('')
+  const aboutArray = 'A Propos de moi'.split('')
 
   const [letterClass, setLetterClass] = useState('text-animate')
 
@@ -38,46 +39,20 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm a Computer Science Undergrad student at Indian Institute of
-            Information Technology and Management, Gwalior.
+            Je suis un étudiant a l'école supérieur du génie informatique spécialisé dans la Cybersécurité
           </p>
           <p>
-            I'm a very ambitious Full stack developer. I love Automating tasks.
-            Also experienced with Natural Language Processing, Computer Vision.
+            Je dévloppe
           </p>
           <p>
-            I'm also a competitive coder. Python is my favorite language but
-            when it comes to competitive coding, I prefer to use C++.
+            I
           </p>
-          <p>In love with Open Source.</p>
+          <p>I</p>
           <p>
-            If I need to define myself in one sentence that would be an Anime
-            Lover, and tech-obsessed!!!
+            I
           </p>
         </div>
 
-        <div className="stage-cube-cont">
-          <div className="cubespinner">
-            <div className="face1">
-              <FontAwesomeIcon icon={faPython} color="#4B8BBE" />
-            </div>
-            <div className="face2">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-            </div>
-            <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-            </div>
-            <div className="face4">
-              <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-            </div>
-            <div className="face5">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-            </div>
-            <div className="face6">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-            </div>
-          </div>
-        </div>
       </div>
       <Loader type="pacman" />
     </>

@@ -80,7 +80,7 @@
 
     a.about-link {
       &:after {
-        content: 'ABOUT';
+        content: 'INFO';
       }
     }
 
@@ -93,6 +93,11 @@
     a.skills-link {
       &:after {
         content: 'SKILLS';
+      }
+    }
+    a.projets-link {
+      &:after {
+        content: 'PROJETS';
       }
     }
 

@@ -9,29 +9,34 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const Contact = () => {
+  const [mapInitialized, setMapInitialized] = useState(false);
   const [letterClass, setLetterClass] = useState('text-animate')
   const form = useRef()
   const contactArray = 'Contact Me'.split('')
 
   useEffect(() => {
-    return setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
+    }, 3000);
+  
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault()
 
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMIAL_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        import.meta.env.VITE_EMAIL_JS_KEY,
+        import.meta.env.VITE_EMAIL_JS_SERVICE,
         form.current,
-        process.env.REACT_APP_PUBLIC_KEY
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE
       )
       .then(
         () => {
-          // alert('Message successfully sent!')
+           alert('Message successfully sent!')
           toast.success('Message successfully sent!', {
             position: 'bottom-center',
             autoClose: 3500,
@@ -44,12 +49,12 @@ const Contact = () => {
           })
           const timeout = setTimeout(() => {
             window.location.reload(false)
+            setMapInitialized(true);
           }, 3900)
-
           return () => clearTimeout(timeout)
         },
         () => {
-          // alert('Failed to send the message, please try again')
+           alert('Failed to send the message, please try again')
           toast.error('Failed to send the message, please try again', {
             position: 'bottom-center',
             autoClose: 3500,
@@ -126,12 +131,14 @@ const Contact = () => {
           <br />
         </div>
         <div className="map-wrap">
-          <MapContainer center={[22.56263, 88.36304]} zoom={13}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[22.56263, 88.36304]}>
-              <Popup>Sudip lives here, come over for a cup of coffee :)</Popup>
-            </Marker>
-          </MapContainer>
+        {mapInitialized && (
+  <MapContainer center={[22.56263, 88.36304]} zoom={13}>
+    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    <Marker position={[22.56263, 88.36304]}>
+      <Popup>Sudip lives here, come over for a cup of coffee :)</Popup>
+    </Marker>
+  </MapContainer>
+)}
         </div>
       </div>
       <Loader type="pacman" />

@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-// import LogoTitle from '../../assets/images/logo-s.png'
-// import Logo from './Logo'
+import LogoTitle from '../../assets/images/logo-s.png'
+import Logo from './Logo'
 // import DisplacementSphere from '../background/DisplacementSphere'
-import { Framer } from '../Geometry/Framer'
 import './index.scss'
 import { SocialIcons } from '../Contact/SocialIcons'
 import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Cube } from './Cube'
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 const useStyles = makeStyles(() => ({
@@ -23,14 +23,22 @@ const useStyles = makeStyles(() => ({
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterName, setLetterName] = useState('name-animate')
 
   const nameArray = 'Ryan Rais'.split('')
-  const jobArray = 'Fullstack Devlopper'.split('')
+  const jobArray = 'Fullstack Devloppeur'.split('')
   const interestArray = 'étudiant en cybersécurité'.split('')
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
+    }, 4000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLetterName('name-animate-hover')
     }, 4000)
     return () => clearTimeout(timer)
   }, [])
@@ -49,10 +57,9 @@ const Home = () => {
             <br />
             <span className={`${letterClass} _13`}>Je suis</span>
             <span className={`${letterClass} _14`}></span>
-            {/* <img src={LogoTitle} alt="Sudip Banerjee" /> */}
        
             <AnimatedLetters
-              letterClass={letterClass}
+              letterClass={letterName}
               strArray={nameArray}
               idx={15}
             />
@@ -75,8 +82,24 @@ const Home = () => {
           </h2>
    
           <Link to="/contact" className="flat-button">
-            CONTACT ME
+            PRENNONS CONTACT
           </Link>
+          <motion.div
+             initial={{ x: '300%' , y : -340 }}
+             animate={{ x: 0 , y : -340, }}
+             exit={{ x: '300%' , y : -340 }}
+             transition={{
+               type: 'keyframe',
+               stiffness: 260,
+               damping: 20,
+               duration: 3,
+               delay: 1.5, // Délai de 4 secondes avant que l'animation commence
+             }}
+          >
+          <Cube/>
+          </motion.div>
+          
+          {/* <Logo/> */}
                {/* <Framer/> */}
           
         </div>

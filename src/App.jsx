@@ -8,10 +8,10 @@ import Soundbar from './components/Soundbar'
 import './App.scss'
 
 
+
 function App() {
   return (
     <>
-
       <Soundbar />
       <Routes>
         <Route path="/" element={<Layout />}>
