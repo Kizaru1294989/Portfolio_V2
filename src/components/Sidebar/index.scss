@@ -7,22 +7,100 @@
   z-index: 3;
   min-height: 500px;
 
-  .logo {
+
+
+
+  ///////////////////////////
+
+  p {
     display: block;
-    padding: 8px 0;
+    text-align: center;
+    position: absolute;
+    height: 210px;
+    top: 50%;
+    margin-top: -120px;
+    width: 100%;
 
-    img {
+    a {
+      font-size: 22px;
+      color: white;
       display: block;
-      margin: 8px auto;
-      width: 24px;
-      height: auto;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      // text-decoration: none;
 
-      &.sub-logo {
-        width: 50px;
+      // i {
+      //   transition: all 0.3s ease-out;
+      // }
+
+      &:hover {
+        // color: #ffd700;
+        background-color:#181818 ;
+        color: red;
+        // svg {
+        //   opacity: 0;
+        // }
+
+        // &:after {
+        //   opacity: 1;
+        // }
+      }
+
+      &:after {
+        content: '';
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        // opacity: 0;
+        // -webkit-transition: all 0.3s ease-out;
+        // transition: all 0.3s ease-out;
+        // margin-left: 60px;
+      }
+
+      &:first-child {
+        &:after {
+          content: 'GMAIL';
+        }
       }
     }
+
+    .git-link {
+      &:after {
+        content: 'GIT';
+      }
+    }
+
+    .linkedin-link {
+      &:after {
+        content: 'LINKEDIN';
+      }
+    }
+
+    .skills-link {
+      &:after {
+        content: 'SKILLS';
+      }
+    }
+    // a.projets-link {
+    //   &:after {
+    //     content: 'PROJETS';
+    //   }
+    // }
+
+    // a.active {
+    //   svg {
+    //     color: #ffd700;
+    //   }
+    // }
   }
 
+
+  ////////////////////////////////
   nav {
     display: block;
     text-align: center;
@@ -71,7 +149,7 @@
         transition: all 0.3s ease-out;
       }
 
-      &:first-child {
+      &.home-link {
         &:after {
           content: 'HOME';
         }

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 // import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import music from '../../assets/sounds/Secunda.mp3'
+import { MusicNote } from '@mui/icons-material'
 
 const Box = styled.div`
   display: flex;
@@ -88,12 +89,15 @@ const SoundBar = () => {
   }
   return (
     <Box onClick={() => handleClick()}>
-      {/* <MusicNoteIcon/> */}
+      {/* <MusicNote onClick={click}/> */}
       <Line click={click} />
       <Line click={click} />
       <Line click={click} />
       <Line click={click} />
       <Line click={click} />
+      <Line click={click} />
+      <Line click={click} />
+ 
       <audio src={music} ref={ref} loop /> &nbsp;
     </Box>
   )

@@ -12,6 +12,8 @@ import {
   faProjectDiagram
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
+import Grid from '@mui/material/Grid';
+
 
 const Sidebar = () => {
   return (
@@ -21,10 +23,32 @@ const Sidebar = () => {
           <img src={LogoS} alt="Logo" />
           <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
         </Link> */}
+     
         <nav>
-          <NavLink exact="true" activeclassname="active" to="/">
+          <p style={{display : 'block' , marginTop : '-440px' }}>
+
+          <NavLink   to="/">
+            <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          </NavLink>
+
+          <NavLink  className="git-link"  activeclassname="active" to="/">
+            <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+          </NavLink>
+
+          <NavLink className="linkedin-link"  activeclassname="active" to="/">
+            <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+          </NavLink>
+
+          {/* <NavLink className="skills-link" exact="true" activeclassname="active" to="/">
+            <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+          </NavLink> */}
+
+          </p>
+          
+          <NavLink className="home-link" activeclassname="active" to="/">
             <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
           </NavLink>
+
           <NavLink activeclassname="active" className="about-link" to="/about">
             <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
           </NavLink>
@@ -59,27 +83,14 @@ const Sidebar = () => {
               target="_blank"
               rel="noreferrer"
             >
+              Doawnload PDF
               <FontAwesomeIcon icon={faLinkedin} color="#b9b9b9" />
             </a>
           </li>
+
           <li>
-            <a
-              href="https://github.com/metal-oopa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon icon={faGithub} color="#b9b9b9" />
-            </a>
           </li>
-          <li>
-            <a
-              href="https://www.codechef.com/users/metal_oopa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={codechefLogo} width="24" alt="Codechef" />
-            </a>
-          </li>
+          
         </ul>
       </div>
     </>

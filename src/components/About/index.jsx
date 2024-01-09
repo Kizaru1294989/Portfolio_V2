@@ -13,6 +13,7 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Ciscoimg from '../../assets/images/cisco.svg'
+import ESGI from '../../assets/images/esgi.jpg'
 import './index.scss'
 
 const About = () => {
@@ -39,10 +40,12 @@ const About = () => {
             />
           </h1>
           <p>
-            Je suis un étudiant a l'école supérieur du génie informatique spécialisé dans la Cybersécurité
+            Je suis un étudiant de l'ESGI en cours de Master en Cybersécurité
+            <img src={ESGI} alt="" />
           </p>
+        
           <p>
-            Je dévloppe
+            En parralèle 
           </p>
           <p>
             I
