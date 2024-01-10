@@ -8,7 +8,78 @@
   min-height: 500px;
 
 
-
+  .wrapper .button {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    // float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:hover {
+    width: 120px;
+  }
+  .wrapper .button .icon {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    // text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 35px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1):hover .icon {
+    background: #4267b2;
+  }
+  .wrapper .button:nth-child(2):hover .icon {
+    background: #1da1f2;
+  }
+  .wrapper .button:nth-child(3):hover .icon {
+    background: #e1306c;
+  }
+  .wrapper .button:nth-child(4):hover .icon {
+    background: #333;
+  }
+  .wrapper .button:nth-child(5):hover .icon {
+    background: #ff0000;
+  }
+  .wrapper .button .icon i {
+    font-size: 25px;
+    // line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:hover .icon i {
+    color: #fff;
+  }
+  .wrapper .button span {
+    font-size: 20px;
+    font-weight: 4000;
+    // line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1) span {
+    color: #4267b2;
+  }
+  .wrapper .button:nth-child(2) span {
+    color: #1da1f2;
+  }
+  .wrapper .button:nth-child(3) span {
+    color: #e1306c;
+  }
+  .wrapper .button:nth-child(4) span {
+    color: #333;
+  }
+  .wrapper .button:nth-child(5) span {
+    color: #ff0000;
+  }
+  
 
   ///////////////////////////
 
@@ -21,82 +92,7 @@
     margin-top: -120px;
     width: 100%;
 
-    a {
-      font-size: 22px;
-      color: white;
-      display: block;
-      line-height: 51px;
-      height: 51px;
-      position: relative;
-      // text-decoration: none;
-
-      // i {
-      //   transition: all 0.3s ease-out;
-      // }
-
-      &:hover {
-        // color: #ffd700;
-        background-color:#181818 ;
-        color: red;
-        // svg {
-        //   opacity: 0;
-        // }
-
-        // &:after {
-        //   opacity: 1;
-        // }
-      }
-
-      &:after {
-        content: '';
-        font-size: 9px;
-        letter-spacing: 2px;
-        position: absolute;
-        bottom: 0;
-        display: block;
-        width: 100%;
-        text-align: center;
-        // opacity: 0;
-        // -webkit-transition: all 0.3s ease-out;
-        // transition: all 0.3s ease-out;
-        // margin-left: 60px;
-      }
-
-      &:first-child {
-        &:after {
-          content: 'GMAIL';
-        }
-      }
-    }
-
-    .git-link {
-      &:after {
-        content: 'GIT';
-      }
-    }
-
-    .linkedin-link {
-      &:after {
-        content: 'LINKEDIN';
-      }
-    }
-
-    .skills-link {
-      &:after {
-        content: 'SKILLS';
-      }
-    }
-    // a.projets-link {
-    //   &:after {
-    //     content: 'PROJETS';
-    //   }
-    // }
-
-    // a.active {
-    //   svg {
-    //     color: #ffd700;
-    //   }
-    // }
+   
   }
 
 

@@ -25,23 +25,26 @@ const Sidebar = () => {
         </Link> */}
      
         <nav>
-          <p style={{display : 'block' , marginTop : '-440px' }}>
+          <p  className="wrapper" style={{display : 'block' , marginTop : '-440px' }}>
+          <div class="button">
+        <div class="icon">
+        <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" style={{width : '15px' , height : '15px'}} />
+        </div>
+        <span>Gmail</span>
+      </div>
+      <div class="button">
+        <div class="icon">
+        <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
+        </div>
+        <span>Github</span>
+      </div>
+      <div class="button">
+        <div class="icon">
+        <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
+        </div>
+        <span>Linkedin</span>
+      </div>
 
-          <NavLink   to="/">
-            <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-          </NavLink>
-
-          <NavLink  className="git-link"  activeclassname="active" to="/">
-            <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
-          </NavLink>
-
-          <NavLink className="linkedin-link"  activeclassname="active" to="/">
-            <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
-          </NavLink>
-
-          {/* <NavLink className="skills-link" exact="true" activeclassname="active" to="/">
-            <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-          </NavLink> */}
 
           </p>
           
