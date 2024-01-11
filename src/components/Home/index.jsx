@@ -11,7 +11,9 @@ import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Cube } from './Cube'
 import { motion, AnimatePresence } from 'framer-motion';
-
+import ESGI from '../../assets/images/esgi.jpg'
+import ButtonHomePage from './ButtonHomePage'
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,7 +28,7 @@ const Home = () => {
   const [letterName, setLetterName] = useState('name-animate')
 
   const nameArray = 'Ryan Rais'.split('')
-  const jobArray = 'Fullstack Devloppeur'.split('')
+  const jobArray = 'Fullstack développeur'.split('')
   const interestArray = 'étudiant en cybersécurité'.split('')
 
   useEffect(() => {
@@ -77,13 +79,14 @@ const Home = () => {
             />
           </h1>
           <h2>
-            Etudiant en Cybersécurité
-            
+            Etudiant en Cybersécurité a l'ESGI
+        
           </h2>
-   
-          <Link to="/contact" className="flat-button">
-            PRENNONS CONTACT
-          </Link>
+          <ButtonHomePage
+                  Icon={ArrowCircleRightIcon}
+                  Redirection={"/contact"}
+                  Title={'Contactez moi'}
+                />
           <motion.div
              initial={{ x: '300%' , y : -340 }}
              animate={{ x: 0 , y : -340, }}

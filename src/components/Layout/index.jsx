@@ -14,7 +14,9 @@ const Layout = () => {
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
-  
+          <div id="rocket"></div>
+          <div id="rocket2"></div>
+          <div id="rocket3"></div>
           <br />
         </span>
       </div>

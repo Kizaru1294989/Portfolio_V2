@@ -41,11 +41,11 @@ const About = () => {
           </h1>
           <p>
             Je suis un étudiant de l'ESGI en cours de Master en Cybersécurité
-            <img src={ESGI} alt="" />
+            {/* <img src={ESGI} alt="" /> */}
           </p>
         
           <p>
-            En parralèle 
+          Malgré ma spécialisation en cybersécurité, ma curiosité pour le monde informatique s'étend à tous ses domaines. J'apprécie particulièrement le développement, car il me permet d'automatiser des infrastructures réseau tout en explorant le côté du développement web pour des tests de pénétration.
           </p>
           <p>
             I
