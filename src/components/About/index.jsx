@@ -1,20 +1,27 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import {
-  faAngular,
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faLinux,
-  faReact,
-  faPython,
-} from "@fortawesome/free-brands-svg-icons";
 import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Ciscoimg from "../../assets/images/cisco.svg";
 import ESGI from "../../assets/images/esgi.jpg";
 import "./index.scss";
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(40),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
 
 const About = () => {
   const aboutArray = "A Propos de moi".split("");
@@ -30,8 +37,9 @@ const About = () => {
 
   return (
     <>
-      <div className="container about-page">
-        <div className="text-zone">
+      <Grid container className="container about-page">
+        
+        <Grid item xs={6} className="text-zone">
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
@@ -56,10 +64,21 @@ const About = () => {
             dévloppement Web dont le but est de proposer des solutions web a des
             particuliers
           </p>
-          <p>I</p>
-          <p>I</p>
-        </div>
-      </div>
+        </Grid>
+        <Grid item xs={6}>
+        </Grid>
+        <Grid style={{ display : 'flex' ,  justifyContent : 'center' , alignItems :'center'}} item  xs={6}>
+          <Item>
+            {/* <Grid style={{ backgroundColor : 'grey' , borderRadius : '25px' , padding : '5px'}}>Picture</Grid>
+            <Grid style={{ backgroundColor : 'black' , borderRadius : '25px'}} >d</Grid> */}
+
+
+
+
+          </Item>
+        </Grid>
+
+      </Grid>
       <Loader type="pacman" />
     </>
   );
