@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import styles from '../../../assets-style/scss/components/button/index.scss?inline';
 
 const ButtonHomePage = ({ Icon, Redirection, Title }) => {

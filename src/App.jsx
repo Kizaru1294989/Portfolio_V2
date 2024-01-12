@@ -1,13 +1,11 @@
-import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
-import Layout from './components/Layout'
-import Skills from './components/Skills'
-import Soundbar from './components/Soundbar'
-import './App.scss'
-
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Layout from "./components/Layout";
+import Skills from "./components/Skills";
+import Soundbar from "./components/Soundbar";
+import "./App.scss";
 
 function App() {
   return (
@@ -19,11 +17,11 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={"<Skills />"} />
         </Route>
       </Routes>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

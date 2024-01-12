@@ -1,73 +1,73 @@
-import { useEffect, useState } from 'react'
-import Loader from 'react-loaders'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
-import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters'
-import './index.scss'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { useEffect, useState } from "react";
+import Loader from "react-loaders";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import AnimatedLetters from "../AnimatedLetters";
+import "./index.scss";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [mapInitialized, setMapInitialized] = useState(false);
-  const [letterClass, setLetterClass] = useState('text-animate')
-  const form = useRef()
-  const contactArray = 'Contact Me'.split('')
+  const [letterClass, setLetterClass] = useState("text-animate");
+  const form = useRef();
+  const contactArray = "Contact Me".split("");
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setLetterClass('text-animate-hover')
+      setLetterClass("text-animate-hover");
     }, 3000);
-  
+
     return () => {
       clearTimeout(timeoutId);
     };
   }, []);
 
   const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAIL_JS_KEY,
         import.meta.env.VITE_EMAIL_JS_SERVICE,
         form.current,
-        import.meta.env.VITE_EMAIL_JS_TEMPLATE
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE,
       )
       .then(
         () => {
-           alert('Message successfully sent!')
-          toast.success('Message successfully sent!', {
-            position: 'bottom-center',
+          alert("Message successfully sent!");
+          toast.success("Message successfully sent!", {
+            position: "bottom-center",
             autoClose: 3500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'dark',
-          })
+            theme: "dark",
+          });
           const timeout = setTimeout(() => {
-            window.location.reload(false)
+            window.location.reload(false);
             setMapInitialized(true);
-          }, 3900)
-          return () => clearTimeout(timeout)
+          }, 3900);
+          return () => clearTimeout(timeout);
         },
         () => {
-           alert('Failed to send the message, please try again')
-          toast.error('Failed to send the message, please try again', {
-            position: 'bottom-center',
+          alert("Failed to send the message, please try again");
+          toast.error("Failed to send the message, please try again", {
+            position: "bottom-center",
             autoClose: 3500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: 'dark',
-          })
-        }
-      )
-  }
+            theme: "dark",
+          });
+        },
+      );
+  };
 
   return (
     <>
@@ -131,19 +131,21 @@ const Contact = () => {
           <br />
         </div>
         <div className="map-wrap">
-        {mapInitialized && (
-  <MapContainer center={[22.56263, 88.36304]} zoom={13}>
-    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-    <Marker position={[22.56263, 88.36304]}>
-      <Popup>Sudip lives here, come over for a cup of coffee :)</Popup>
-    </Marker>
-  </MapContainer>
-)}
+          {mapInitialized && (
+            <MapContainer center={[22.56263, 88.36304]} zoom={13}>
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <Marker position={[22.56263, 88.36304]}>
+                <Popup>
+                  Sudip lives here, come over for a cup of coffee :)
+                </Popup>
+              </Marker>
+            </MapContainer>
+          )}
         </div>
       </div>
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

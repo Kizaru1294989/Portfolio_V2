@@ -1,17 +1,17 @@
-import './index.scss'
-import LogoS from '../../assets/images/logo-s.png'
-import codechefLogo from '../../assets/images/codechef.png'
-import LogoSubtitle from '../../assets/images/Sudip_logo_white.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import "./index.scss";
+import LogoS from "../../assets/images/logo-s.png";
+import codechefLogo from "../../assets/images/codechef.png";
+import LogoSubtitle from "../../assets/images/Sudip_logo_white.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faHome,
   faUser,
   faEnvelope,
   faScrewdriverWrench,
-  faProjectDiagram
-} from '@fortawesome/free-solid-svg-icons'
-import { Link, NavLink } from 'react-router-dom'
+  faProjectDiagram,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -83,7 +83,7 @@ const Sidebar = () => {
         </ul>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
