@@ -79,11 +79,25 @@ const Home = () => {
               />
             </h1>
             <h2>Etudiant en Cybersécurité a l'ESGI</h2>
-            <ButtonHomePage
+            <motion.div
+              initial={{ x: "-300%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-300%" }}
+              transition={{
+                type: "keyframe",
+                stiffness: 260,
+                damping: 20,
+                duration: 3,
+                delay: 0.5, 
+              }}
+            >
+             <ButtonHomePage
               Icon={ArrowCircleRightIcon}
               Redirection={"/contact"}
               Title={"Contactez moi"}
             />
+            </motion.div>
+
             <motion.div
               initial={{ x: "300%", y: -340 }}
               animate={{ x: 0, y: -340 }}
@@ -93,7 +107,7 @@ const Home = () => {
                 stiffness: 260,
                 damping: 20,
                 duration: 3,
-                delay: 1.5, // Délai de 4 secondes avant que l'animation commence
+                delay: 1, 
               }}
             >
               <Cube />

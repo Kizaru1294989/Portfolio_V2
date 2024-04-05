@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
 import WordCloud from "./wordcloud";
+import Arrow from "./Arrow"
+import ArrowBack from "./ArrowBack";
+
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
-
+  const otherComponentRef = useRef(null);
+  const otherComponentRefs = useRef(null);
   const skillsArray = "Skills".split("");
 
   useEffect(() => {
@@ -15,11 +19,16 @@ const Skills = () => {
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
-
+  // style={{ overflowX: "auto", whiteSpace: "nowrap" }}
   return (
     <>
-      <div className="container skills-page">
-        <div className="text-zone">
+      <div className="container skills-page" ref={otherComponentRefs}>
+      <Arrow  scrollTargetRef={otherComponentRef}/>
+      <div className="tagcloud-wrap">
+          <WordCloud />
+        </div>
+        <div className="text-zone"  >
+          
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
@@ -37,10 +46,12 @@ const Skills = () => {
             Looking for a role in a company with the opportunity to work with
             the latest technologies on challenging and diverse projects.
           </p>
+   
         </div>
 
-        <div className="tagcloud-wrap">
-          <WordCloud />
+        <div ref={otherComponentRef}>
+        <h1>PART 2</h1>
+        <ArrowBack scrollTargetRef={otherComponentRefs}/>
         </div>
       </div>
 

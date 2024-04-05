@@ -56,7 +56,7 @@ const About = () => {
             Malgré ma spécialisation en cybersécurité, ma curiosité pour le
             monde informatique s'étend à tous ses domaines. J'apprécie
             particulièrement le développement, car il me permet d'automatiser
-            des infrastructures réseau tout en explorant le côté du
+            de nombreuses chosese tel que des infrastructure réseaux et bien d'autres tout en explorant le côté du
             développement web pour des tests de pénétration.
           </p>
           <p>

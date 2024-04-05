@@ -10,23 +10,21 @@ const WordCloud = () => {
     "Java",
     "React",
     "mongoDB",
-    "Express",
+    "Fastify",
     "NodeJS",
-    "Redux",
-    "HTML5",
-    "CSS3",
+    "Ansible",
     "JS",
-    "Flask",
-    "Flutter",
-    "Dart",
+    "Nginx",
+    "ELK",
+    "PGSQL",
     "FireBase",
-    "MySQl",
-    "C++",
-    "C",
+    "Fortinet",
+    "C++ / C / C#",
+    "Arista",
     "Python",
-    "Django",
+    "Palo Alto",
     "Git",
-    "Ubuntu",
+    "Cisco",
   ];
   const options = {
     radius: 300,
@@ -46,7 +44,7 @@ const WordCloud = () => {
   useEffect(() => {
     if (isLoading) {
       TagCloud(container, texts, options);
-      console.log("i fire once");
+      // console.log("i fire once");
       setLoad(false);
     }
   });

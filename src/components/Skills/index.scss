@@ -1,6 +1,6 @@
 .tagcloud-wrap {
   // background: gray;
-  float: right;
+margin-left: 35%;
   width: 53%;
   height: 135%;
   margin-top: 2%;
@@ -14,5 +14,100 @@
   }
   .tagcloud--item:hover {
     color: #00ff7f;
+  }
+}
+
+.wrapper_1 {
+  display: flex;
+  justify-content: left;
+  // padding-right: 150px;
+}
+
+.cta_1 {
+  margin: 2rem 0;
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Coolvetica";
+  font-size: 40px;
+  color: white;
+  background-color: #2b4162;
+  background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+  transition: 1s;
+  align-items: center;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+}
+
+.cta_1:focus {
+  outline: none;
+}
+
+.cta_1:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #61dbfb;
+}
+
+.cta_1 span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta_1:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.span__button_1 {
+  transform: skewX(15deg);
+}
+
+.span__button_1:nth-child(2) {
+  width: 20px;
+  // margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+/**************SVG****************/
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta_1:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta_1:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta_1:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #61dbfb;
+  }
+  100% {
+    fill: white;
   }
 }
